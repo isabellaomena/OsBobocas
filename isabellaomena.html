@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>isa. — my little corner of the internet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,900;1,500&family=DM+Mono:wght@400;500&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8f1ee; --bg2:#fbf6f4; --navy:#1d2340; --pink:#f6bfd2; --pink-soft:#fadbe6;
+  --hot:#e8559a; --teal:#5fa3a8; --grey:#c6c6cf;
+  --serif:'Playfair Display',Georgia,serif; --mono:'DM Mono',monospace; --sans:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--navy);font-family:var(--mono);line-height:1.6}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--hot);outline-offset:3px}
+section{padding:56px 6vw;border-bottom:1px solid #e9dcd8}
+.wrap{max-width:1100px;margin:0 auto}
+h2{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.05}
+.sub{font-size:.85rem;margin-top:8px}
+.star{color:var(--navy)}
+
+.ph{background:var(--grey);border-radius:14px;display:grid;place-items:center;color:#9a9aa6;font-size:2rem}
+.ph::after{content:"▣"}
+.ph img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.ph:has(img)::after{content:none}
+
+/* NAVBAR */
+.nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid #e1d3cf;display:flex;align-items:center;justify-content:space-between;padding:12px 4vw}
+.logo{font-family:var(--serif);font-weight:900;font-size:2rem}
+.nav ul{list-style:none;display:flex;gap:18px;font-family:var(--sans);font-size:.8rem}
+.nav a{padding:4px 12px;border-radius:99px}
+.nav a.on{background:var(--navy);color:#fff}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#f9e4e6,var(--bg) 60%);padding-top:70px;padding-bottom:70px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.hi{font-family:var(--serif);font-style:italic;font-size:3.2rem;margin-bottom:-26px;margin-left:30px}
+.name{font-family:var(--serif);font-weight:900;font-size:8.5rem;line-height:1}
+.hero p{margin-top:14px;max-width:260px}
+.bar{display:block;width:80px;height:10px;margin-top:18px;background:repeating-linear-gradient(135deg,var(--navy) 0 2px,transparent 2px 5px)}
+.window{background:#fff;border:6px solid #fff;border-radius:12px;box-shadow:0 14px 30px rgba(120,60,90,.2);transform:rotate(3deg);overflow:hidden}
+.window .top{background:var(--pink);height:30px;display:flex;gap:8px;align-items:center;justify-content:flex-end;padding-right:12px}
+.window .top i{width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--navy)}
+.window .ph{aspect-ratio:16/10;border-radius:0}
+.deco{position:absolute;font-size:2.4rem;pointer-events:none}
+
+/* ABOUT */
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr 1fr;gap:40px;align-items:center}
+.about .ph{aspect-ratio:1;border:3px solid #fff;outline:2px solid var(--teal);outline-offset:8px;border-radius:22px}
+.about p{font-size:.85rem;margin:14px 0}
+.chip-box{background:var(--pink-soft);border-radius:14px;padding:14px 20px;font-size:.78rem;display:inline-block;list-style:none}
+.chip-box li::before{content:"★ ";font-size:.7rem}
+.facts{border-left:1px solid var(--navy);padding-left:36px}
+.facts h3{font-size:.8rem;letter-spacing:.16em;color:var(--teal);margin-bottom:14px;font-weight:500}
+.facts ul{list-style:none;display:grid;gap:10px}
+.facts li{border:1.5px solid #dfe3e6;background:#fff8;border-radius:99px;padding:7px 18px;font-size:.8rem}
+.facts li::before{content:"★";color:var(--teal);margin-right:10px}
+
+/* HOBBIES */
+.hobbies{background:linear-gradient(100deg,var(--bg) 20%,var(--pink) 85%);position:relative;overflow:hidden}
+.hobbies .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:center}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.tags span{border:1.5px solid var(--navy);border-radius:99px;padding:3px 16px;font-size:.75rem;background:#fff6}
+.polaroids{position:relative;height:320px}
+.pol{position:absolute;background:#fff;padding:10px 10px 30px;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.pol .ph{width:100%;height:100%;border-radius:4px}
+.pol:nth-child(1){width:200px;height:240px;left:0;top:0;transform:rotate(-4deg)}
+.pol:nth-child(2){width:210px;height:250px;left:180px;top:-10px;transform:rotate(3deg)}
+.pol:nth-child(3){width:150px;height:170px;left:110px;top:150px;transform:rotate(-2deg)}
+
+/* FAVORITES */
+.favs .wrap{display:grid;grid-template-columns:240px 1fr;gap:30px;align-items:center}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.card{border:2px solid var(--pink);border-radius:20px;padding:8px;background:#fff7}
+.card .ph{aspect-ratio:1/.8;border-radius:14px}
+.card b{display:block;background:var(--pink);margin-top:8px;border-radius:12px;padding:6px;text-align:center;font-family:var(--sans);font-size:.85rem}
+
+/* SOCIALS */
+.socials .wrap{display:grid;grid-template-columns:240px 1fr;gap:30px;align-items:center}
+.links{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.links a{background:var(--pink-soft);border:2px solid var(--pink);border-radius:20px;padding:26px 8px 16px;text-align:center;font-family:var(--sans);font-weight:700;font-size:.9rem;transition:transform .2s}
+.links a:hover{transform:translateY(-4px)}
+.links span{display:block;font-size:1.8rem;color:var(--hot);margin-bottom:8px}
+
+/* TECH */
+.tech .wrap{display:grid;grid-template-columns:1.1fr 1fr 1fr 1.2fr;gap:30px;align-items:start}
+.tech h3{font-size:.8rem;letter-spacing:.14em;font-weight:500;color:var(--teal);margin-bottom:14px}
+.tech .col{border-left:1px solid var(--navy);padding-left:26px}
+.proj{display:grid;place-items:center;gap:6px;height:130px;font-family:var(--sans);font-weight:700}
+.term{background:var(--navy);border-radius:10px;border-top:26px solid var(--pink);color:#fff;padding:20px;height:150px;font-size:.8rem;position:relative}
+.term .cur{display:inline-block;width:8px;height:14px;background:#fff;vertical-align:middle;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* FOOTER */
+footer{background:var(--navy);color:#fff;padding:36px 6vw}
+footer .wrap{display:flex;align-items:center;gap:30px;flex-wrap:wrap;font-family:var(--sans);font-size:.85rem}
+footer .logo{padding-right:30px;border-right:1px solid #fff4}
+footer .up{margin-left:auto;width:44px;height:44px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center}
+
+@media (max-width:860px){
+  .nav ul{display:none}
+  .hero .wrap,.about .wrap,.hobbies .wrap,.favs .wrap,.socials .wrap,.tech .wrap{grid-template-columns:1fr}
+  .name{font-size:6rem}
+  .facts,.tech .col{border-left:0;padding-left:0}
+  .cards,.links{grid-template-columns:repeat(2,1fr)}
+  .polaroids{height:300px}
+  footer .up{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){.term .cur{animation:none}.links a{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#home">isa. ✦</a>
+  <ul>
+    <li><a class="on" href="#home">home</a></li>
+    <li><a href="#about">about</a></li>
+    <li><a href="#hobbies">hobbies</a></li>
+    <li><a href="#favorites">favorites</a></li>
+    <li><a href="#socials">socials</a></li>
+    <li><a href="#tech">tech &amp; studies</a></li>
+  </ul>
+  <span aria-hidden="true">☾</span>
+</header>
+
+<section class="hero" id="home">
+  <span class="deco" style="left:3%;top:30%">✦</span>
+  <span class="deco" style="right:2%;top:12%">★</span>
+  <div class="wrap">
+    <div>
+      <div class="hi">Oiii! Eu sou a</div>
+      <h1 class="name">Isa!</h1>
+      <p>Bem-vinda(o) ao meu lugarzinho na internet! ♡</p>
+      <span class="bar"></span>
+    </div>
+    <div class="window">
+      <div class="top"><i></i><i></i><i></i></div>
+      <div class="ph"></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="ph"></div>
+    <div>
+      <h2>um pouco<br>sobre mim ✦</h2>
+      <p>i’m isa, a curious mind, a dreamer, and a girl who loves to learn, create and feel deeply. here you’ll find a mix of my thoughts, interests and little obsessions ♡</p>
+      <ul class="chip-box">
+        <li>15 y/o</li><li>from brazil</li><li>dreaming big ✧</li>
+      </ul>
+    </div>
+    <div class="facts">
+      <h3>QUICK FACTS</h3>
+      <ul>
+        <li>overthinker (professional)</li>
+        <li>music is my therapy</li>
+        <li>big fan of taylor swift</li>
+        <li>always on my laptop</li>
+        <li>loves a good movie</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="hobbies" id="hobbies">
+  <div class="wrap">
+    <div>
+      <h2>hobbies &amp;<br>interests ✦</h2>
+      <p class="sub">a little moodboard — of what i love ♡</p>
+      <div class="tags">
+        <span>music</span><span>movies &amp; series</span><span>books</span><span>coding</span>
+        <span>fashion</span><span>games</span><span>tech</span><span>pop culture</span>
+      </div>
+    </div>
+    <div class="polaroids">
+      <div class="pol"><div class="ph"></div></div>
+      <div class="pol"><div class="ph"></div></div>
+      <div class="pol"><div class="ph"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="favs" id="favorites">
+  <div class="wrap">
+    <div>
+      <h2>5<br>favorites ✦</h2>
+      <p class="sub">the essentials ♡</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ph"></div><b>🍴 food</b></div>
+      <div class="card"><div class="ph"></div><b>🎬 movie</b></div>
+      <div class="card"><div class="ph"></div><b>📺 series</b></div>
+      <div class="card"><div class="ph"></div><b>📍 place</b></div>
+      <div class="card"><div class="ph"></div><b>👤 person</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="socials" id="socials">
+  <div class="wrap">
+    <div>
+      <h2 style="font-style:italic">let’s<br>connect! ✦</h2>
+      <p class="sub">find me here ♡</p>
+    </div>
+    <nav class="links">
+      <a href="#"><span>♪</span>tiktok</a>
+      <a href="#"><span>◎</span>instagram</a>
+      <a href="#"><span>❖</span>skoob</a>
+      <a href="#"><span>●●●</span>letterboxd</a>
+      <a href="#"><span>℗</span>pinterest</a>
+    </nav>
+  </div>
+</section>
+
+<section class="tech" id="tech">
+  <div class="wrap">
+    <div>
+      <h2>technology &amp;<br>studies ✦</h2>
+      <p class="sub">code, learn, build ♡</p>
+      <p class="sub" style="max-width:240px;margin-top:20px">i love technology, and i’m always exploring new things — from front end development to data, AI and more.</p>
+    </div>
+    <div class="col">
+      <h3>MY PROJECTS ✦</h3>
+      <a class="proj ph" href="#">github</a>
+    </div>
+    <div class="col">
+      <h3>WHAT I’M INTO</h3>
+      <div class="tags" style="margin:0">
+        <span>web development</span><span>data science</span><span>python</span><span>java</span><span>tech in general ♡</span>
+      </div>
+    </div>
+    <div class="term">&gt; dream. code. repeat. <span class="cur"></span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#home">isa. ✦</a>
+    <a href="#home">⌂ home</a>
+    <a href="#about">★ about</a>
+    <a href="#hobbies">♡ hobbies</a>
+    <a href="#favorites">▤ favorites</a>
+    <a href="#socials">☻ socials</a>
+    <a href="#tech">▭ tech &amp; studies</a>
+    <a class="up" href="#home" aria-label="voltar ao topo">↑</a>
+  </div>
+</footer>
+
+</body>
+</html>
