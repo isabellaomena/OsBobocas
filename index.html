@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça os integrantes do projeto Os Bobocas e explore nossos portfólios pessoais.">
+  <meta name="theme-color" content="#171830">
+  <title>Os Bobocas | Nosso mundo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f6f1;
+      --ink: #171830;
+      --muted: #6e7085;
+      --line: #dddce8;
+      --pink: #ffaed1;
+      --lilac: #cfc4ff;
+      --yellow: #ffe48c;
+      --mint: #b8edda;
+      --orange: #ffc7a9;
+      --blue: #b7def8;
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.55 "DM Sans", system-ui, sans-serif; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(1160px, calc(100% - 44px)); margin: auto; }
+    .topbar { border-bottom: 1px solid var(--line); background: rgba(248,246,241,.96); position: sticky; top: 0; z-index: 20; backdrop-filter: blur(12px); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .logo { font: 700 1.55rem/1 "Space Grotesk", sans-serif; letter-spacing: -.06em; text-decoration: none; }
+    .logo span { color: #ea6c9d; }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .navlinks a { text-decoration: none; font-size: .93rem; font-weight: 700; padding: 10px 16px; border-radius: 100px; }
+    .navlinks a:hover { background: #ece8f8; }
+    .navlinks .nav-cta { background: var(--ink); color: white; }
+    .navlinks .nav-cta:hover { background: #49426f; }
+    .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+    .hero::after { content: "✳"; position: absolute; color: var(--lilac); font-size: clamp(150px, 25vw, 350px); right: -50px; bottom: -140px; line-height: 1; z-index: -1; }
+    .hero-inner { padding: 90px 0 96px; max-width: 910px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: .83rem; font-weight: 800; text-transform: uppercase; letter-spacing: .13em; }
+    .eyebrow::before { content: ""; display: inline-block; width: 32px; height: 3px; background: #e46b99; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: "Space Grotesk", "DM Sans", sans-serif; }
+    h1 { font-size: clamp(3.4rem, 9vw, 8.1rem); line-height: .97; letter-spacing: -.085em; margin: 23px 0 26px; font-weight: 700; }
+    h1 em { font-style: normal; color: #e46b99; }
+    .intro { color: #4d4f65; font-size: clamp(1rem, 2vw, 1.18rem); max-width: 580px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 31px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 50px; padding: 12px 24px; background: var(--ink); color: white; border: 2px solid var(--ink); border-radius: 100px; text-decoration: none; font-weight: 800; transition: transform .2s, box-shadow .2s; }
+    .button:hover { transform: translateY(-3px); box-shadow: 4px 5px 0 #cfc4ff; }
+    .button.secondary { background: transparent; color: var(--ink); }
+    .section { padding: 84px 0 100px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+    .section-head h2 { font-size: clamp(2.3rem, 5vw, 4.4rem); letter-spacing: -.07em; line-height: 1.05; margin: 12px 0 0; }
+    .section-head p { max-width: 330px; margin-bottom: 3px; color: var(--muted); }
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .card { --accent: var(--pink); display: flex; flex-direction: column; min-width: 0; background: white; border: 2px solid var(--ink); border-radius: var(--radius); overflow: hidden; text-decoration: none; box-shadow: 6px 6px 0 var(--accent); transition: transform .2s, box-shadow .2s; }
+    .card:hover { transform: translate(-3px, -5px); box-shadow: 10px 12px 0 var(--accent); }
+    .card:focus-visible, a:focus-visible { outline: 3px solid #704ce3; outline-offset: 5px; }
+    .card-visual { background: var(--accent); aspect-ratio: 1.34; overflow: hidden; position: relative; }
+    .card-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+    .card:hover .card-visual img { transform: scale(1.055); }
+    .card-number { position: absolute; top: 15px; left: 15px; background: white; border: 1.5px solid var(--ink); border-radius: 100px; padding: 5px 13px; font-size: .77rem; font-weight: 800; }
+    .card-body { display: flex; align-items: end; justify-content: space-between; gap: 12px; padding: 22px; flex: 1; }
+    .card-body p { color: var(--muted); font-size: .84rem; margin: 0 0 6px; }
+    .card-body h3 { font-size: clamp(1.5rem, 2.5vw, 1.95rem); letter-spacing: -.055em; line-height: 1.1; margin: 0; }
+    .arrow { flex: none; display: grid; place-items: center; width: 42px; height: 42px; border: 1.5px solid var(--ink); border-radius: 50%; background: var(--accent); font-size: 1.45rem; }
+    .closing { padding: 45px 0; background: var(--ink); color: #fff; }
+    .closing-inner { display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .closing h2 { font-size: clamp(1.7rem, 4vw, 2.6rem); letter-spacing: -.06em; margin: 0 0 5px; }
+    .closing p { color: #cacadd; margin: 0; }
+    .closing a { color: #fff; text-underline-offset: 4px; }
+    footer { background: #101122; color: #c5c5d8; padding: 22px 0; font-size: .85rem; }
+    footer .container { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    @media (max-width: 900px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hero-inner { padding: 74px 0; } }
+    @media (max-width: 600px) { .container { width: min(100% - 30px, 1160px); } .nav { min-height: 68px; } .navlinks a:not(.nav-cta) { display: none; } .hero-inner { padding: 62px 0 68px; } .section { padding: 65px 0 77px; } .section-head { display: block; } .section-head p { margin-top: 14px; } .cards { grid-template-columns: 1fr; gap: 26px; } .card-visual { aspect-ratio: 1.5; } .closing-inner { display: block; } .closing-inner a { display: inline-block; margin-top: 15px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="logo" href="index.html">os bobocas<span>✳</span></a>
+      <div class="navlinks">
+        <a href="#inicio">Início</a>
+        <a href="#integrantes">Integrantes</a>
+        <a class="nav-cta" href="#integrantes">Conhecer a turma ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="titulo-principal">
+      <div class="container hero-inner">
+        <span class="eyebrow">Um site, muitas histórias</span>
+        <h1 id="titulo-principal">Somos os<br><em>Bobocas.</em></h1>
+        <p class="intro">Seis personalidades, seis universos diferentes. Entre fotos, histórias, gostos e curiosidades, descubra um pouco mais sobre cada um de nós.</p>
+        <div class="hero-actions">
+          <a class="button" href="#integrantes">Explorar os perfis <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="https://github.com/isabellaomena/OsBobocas" target="_blank" rel="noopener noreferrer">Ver no GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="integrantes" aria-labelledby="titulo-integrantes">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Escolha um perfil</span>
+            <h2 id="titulo-integrantes">Conheça a turma<span style="color:#e46b99">.</span></h2>
+          </div>
+          <p>Clique em um cartão para abrir a página pessoal de cada integrante.</p>
+        </div>
+        <div class="cards">
+          <a class="card" style="--accent:var(--pink)" href="paginas/isabellaomena.html" aria-label="Abrir página da Isabella">
+            <div class="card-visual"><img src="imagens/isa_perfilpvd.webp" alt="Foto da Isabella" loading="lazy"><span class="card-number">01 / 06</span></div>
+            <div class="card-body"><div><p>Portfólio pessoal</p><h3>Isabella</h3></div><span class="arrow" aria-hidden="true">↗</span></div>
+          </a>
+          <a class="card" style="--accent:var(--yellow)" href="paginas/caio.html" aria-label="Abrir página do Caio">
+            <div class="card-visual"><img src="imagens/literalmenteeu.jpg" alt="Foto do Caio" loading="lazy"><span class="card-number">02 / 06</span></div>
+            <div class="card-body"><div><p>Portfólio pessoal</p><h3>Caio</h3></div><span class="arrow" aria-hidden="true">↗</span></div>
+          </a>
+          <a class="card" style="--accent:var(--lilac)" href="paginas/MJ.html" aria-label="Abrir página do Miguel">
+            <div class="card-visual"><img src="imagens/imagens_MJ/Foto_MJ.jpeg" alt="Foto do Miguel" loading="lazy"><span class="card-number">03 / 06</span></div>
+            <div class="card-body"><div><p>Portfólio pessoal</p><h3>Miguel</h3></div><span class="arrow" aria-hidden="true">↗</span></div>
+          </a>
+          <a class="card" style="--accent:var(--mint)" href="paginas/Bianca%20Bazoni.html" aria-label="Abrir página da Bianca">
+            <div class="card-visual"><img src="imagens/eularanja.jpeg" alt="Foto da Bianca" loading="lazy"><span class="card-number">04 / 06</span></div>
+            <div class="card-body"><div><p>Portfólio pessoal</p><h3>Bianca</h3></div><span class="arrow" aria-hidden="true">↗</span></div>
+          </a>
+          <a class="card" style="--accent:var(--orange)" href="paginas/lulupagina.html" aria-label="Abrir página da Luiza">
+            <div class="card-visual"><img src="imagens/fotoLulu.png" alt="Foto da Luiza" loading="lazy"><span class="card-number">05 / 06</span></div>
+            <div class="card-body"><div><p>Portfólio pessoal</p><h3>Luiza</h3></div><span class="arrow" aria-hidden="true">↗</span></div>
+          </a>
+          <a class="card" style="--accent:var(--blue)" href="paginas/rafapagina.html" aria-label="Abrir página da Rafaella">
+            <div class="card-visual"><img src="imagens/imagens_rafa/foto1co.png" alt="Foto da Rafaella" loading="lazy"><span class="card-number">06 / 06</span></div>
+            <div class="card-body"><div><p>Portfólio pessoal</p><h3>Rafaella</h3></div><span class="arrow" aria-hidden="true">↗</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" aria-label="Sobre o projeto">
+      <div class="container closing-inner">
+        <div><h2>Um projeto feito por todos nós.</h2><p>Cada página tem seu próprio estilo, assim como cada integrante.</p></div>
+        <a href="#inicio">Voltar ao início ↑</a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container"><span>© 2026 Os Bobocas</span><span>Feito com HTML &amp; CSS</span></div></footer>
+</body>
+</html>
