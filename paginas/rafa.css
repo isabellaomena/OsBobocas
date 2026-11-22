@@ -1,283 +1,433 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafa Rosa</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
-      rel="stylesheet">
-    <link rel="stylesheet" href="rafa.css">
-<style id="osbobocas-voltar-style">
-.osbobocas-voltar-index { position: fixed; right: 18px; bottom: 18px; z-index: 2147483647; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; max-width: calc(100vw - 36px); padding: 12px 18px; border: 2px solid #fff; border-radius: 999px; background: #252238; color: #fff !important; box-shadow: 0 6px 24px #0003; font: 700 14px/1.3 Arial, sans-serif; letter-spacing: .01em; text-decoration: none !important; transition: background .2s, transform .2s; }
-.osbobocas-voltar-index:hover { background: #6e4776; transform: translateY(-3px); }
-.osbobocas-voltar-index:focus-visible { outline: 3px solid #ffcc6b; outline-offset: 3px; }
-@media (max-width: 480px) { .osbobocas-voltar-index { right: 12px; bottom: 12px; padding: 11px 15px; font-size: 12px; } }
-</style>
-</head>
 
-<body id="topo">
-    <nav aria-label="Navegação principal">
-        <div class="largura">
-            <a class="marca" href="#topo">Rafa Rosa</a>
 
-            <ul>
-                <li><a href="#curiosidades">Curiosidades</a></li>
-                <li><a href="#viagens">Já fui</a></li>
-                <li><a href="#destinos">Quero conhecer</a></li>
-            </ul>
-        </div>
-    </nav>
+:root {
+    --fundo: #faebd7;
+    --papel: #fff7ed;
+    --rosa: #e5a9b8;
+    --rosa-claro: #f8dfe4;
+    --destaque: #884b60;
+    --texto: #493940;
+    --borda: #e6cfc5;
+    --caramelo: #c68e55;
+}
 
-    <header>
-        <div class="largura apresentacao">
-            <div>
-                <p>✿ Um pouquinho sobre mim</p>
 
-                <h1>Rafaella Rosa Silva Santos</h1>
 
-                <p>
-                    Nome: Rafaella Rosa Silva Santos<br>
-                    Idade: 16 anos<br>
-                    Cidade em que nasci: São Paulo
-                </p>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-                <div class="acoes">
-                    <a class="botao" href="#curiosidades">
-                        Me conheça melhor ↓
-                    </a>
-                    <a class="botao" href="#destinos">
-                        Meus próximos destinos
-                    </a>
-                </div>
-            </div>
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 150px;
+}
 
-            <div class="galeria">
-                <img src="../imagens/imagens_rafa/foto1co.png" alt="Foto 1">
-                <img src="../imagens/imagens_rafa/foto2co.png" alt="Foto 2">
-                <img src="../imagens/imagens_rafa/foto3co.png" alt="Foto 3">
-                <img src="../imagens/imagens_rafa/foto4co.png" alt="Foto 4">
-            </div>
-        </div>
-    </header>
+body {
+    background-color: var(--fundo);
+    background-image: radial-gradient(
+        circle,
+        var(--borda) 1px,
+        transparent 1px
+    );
+    background-size: 24px 24px;
+    color: var(--texto);
+    font-family: "Quicksand", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.7;
+}
 
-    <main class="largura">
-        <section id="curiosidades">
-            <h2>Curiosidades</h2>
+.largura {
+    width: min(92%, 1120px);
+    margin-inline: auto;
+}
 
-            <ol class="curiosidades">
-                <li>
-                    <div>
-                        <h3>Eu amo comida asiática</h3>
+h1,
+h2,
+h3 {
+    color: var(--destaque);
+    line-height: 1.2;
+    overflow-wrap: break-word;
+    font-family: "Lora", Georgia, serif;
+    font-weight: 600;
+}
 
-                        <p>
-                            Minha comida favorita é temaki, e meus últimos
-                            3 jantares de aniversário foram em um rodizio
-                            de comida japonesa.
-                            Meu maior sonho é provar a culinaria de todos os países asiáticos algun dia !
-                        </p>
+h1 {
+    margin: 12px 0 20px;
+    font-size: clamp(2.5rem, 5vw, 4.4rem);
+    letter-spacing: -1.5px;
+    text-shadow: 3px 3px var(--rosa-claro);
+}
 
-                        <p>recomendação de rodizios:</p>
+h2 {
+    margin-bottom: 24px;
+    padding-left: 16px;
+    border-left: 5px solid var(--rosa);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
 
-                        <div class="acoes">
-                            <a class="botao"
-                               href="https://share.google/L8asT8hC4ul08PLbJ"
-                               target="_blank" rel="noopener noreferrer">
-                                <strong>Okazaki, Santo André</strong>
-                                <span>
-                                    Muito acolhedor e nostalgico, vou desde os 11 anos.
-                                </span>
-                            </a>
+h3 {
+    margin-bottom: 16px;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
 
-                            <a class="botao"
-                               href="https://share.google/xR2F2vX5kLQW48Pks"
-                               target="_blank" rel="noopener noreferrer">
-                                <strong>Cho sun Galbi, Liberdade</strong>
-                                <span>
-                                    Por ser um pouco mais longe, eu só fui uma vez, mas é muito bom e vale a pena conhecer.
-                                </span>
-                            </a>
-                        </div>
-                    </div>
+p + p {
+    margin-top: 14px;
+}
 
-                    <div class="galeria">
-                        <img src="../imagens/imagens_rafa/food1.png"
-                             alt="Comida asiática" loading="lazy">
-                        <img src="../imagens/imagens_rafa/food2.png"
-                             alt="Comida japonesa" loading="lazy">
-                    </div>
-                </li>
+a {
+    color: var(--destaque);
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
 
-                <li>
-                    <div>
-                        <h3>Eu amo roomcoms</h3>
+a:hover {
+    text-decoration: underline;
+}
 
-                        <p>
-                            É meu gênero favorito de filmes, a minha
-                            roomcom favorita é 10 coisas que eu odeio em você.
-                            Creio que esse costume veio da minha infância, quando eu assistia a muitos filmes de comédia romântica com a minha mãe.
-                        </p>
+a:focus-visible,
+.carrossel:focus-visible {
+    outline: 3px solid var(--destaque);
+    outline-offset: 4px;
+}
 
-                        <p>Meu letterbox:</p>
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
-                        <div class="acoes">
-                            <a class="botao"
-                               href="https://letterboxd.com/mentionedrose/"
-                               target="_blank" rel="noopener noreferrer">
-                                mentionedrose
-                            </a>
-                        </div>
-                    </div>
+::selection {
+    background: var(--rosa);
+    color: var(--texto);
+}
 
-                    <div class="carrossel"
-                         tabindex="0"
-                         role="region"
-                         aria-label="Roomcoms. Use as setas para percorrer">
-                        <img src="../imagens/imagens_rafa/roomcom'.png"
-                             alt="Roomcom 1" loading="lazy">
-                        <img src="../imagens/imagens_rafa/roomcom2.png"
-                             alt="Roomcom 2" loading="lazy">
-                        <img src="../imagens/imagens_rafa/roomcom3.png"
-                             alt="Roomcom 3" loading="lazy">
-                        <img src="../imagens/imagens_rafa/roomcom4.png"
-                             alt="Roomcom 4" loading="lazy">
-                    </div>
-                </li>
+/* Navbar */
 
-                <li>
-                    <div>
-                        <h3>Sou viciada em música e cbjr</h3>
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--rosa-claro);
+    border-bottom: 2px solid var(--rosa);
+    box-shadow: 0 4px 12px #49394012;
+}
 
-                        <p>
-                            Já fui no show do charlie brown jr uma vez
-                            e foi uma das melhores experiências da minha
-                            vida, sou top 3% deles no spotify.
-                            Meus artistas favoritos são: Charlie Brown Jr, Lana Del Rey e Tyler, The Creator.
-                            Eu também já fui em mais de 8 shows de outros artistas, e pretendo ir em muitos mais !
-                        </p>
+nav .largura,
+footer .largura {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding-block: 16px;
+}
 
-                        <p>
-                            Link da minha playlist de cbjr + perfil spotify:
-                        </p>
+.marca {
+    color: var(--destaque);
+    font-size: 1.4rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
 
-                        <div class="acoes">
-                            <a class="botao"
-                               href="https://open.spotify.com/user/2wx6qmxd37x915spypz7f2923?si=897bb2f7385140cf"
-                               target="_blank" rel="noopener noreferrer">
-                                Meu perfil
-                            </a>
+.marca::after {
+    content: " ✿";
+}
 
-                            <a class="botao"
-                               href="https://open.spotify.com/playlist/1I3RUV75qMOscVSNlNRZbZ?si=iCvEBIW8Rh2wmezswOJrzw"
-                               target="_blank" rel="noopener noreferrer">
-                                Minha Playlist
-                            </a>
-                        </div>
-                    </div>
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    list-style: none;
+}
 
-                    <div class="galeria">
-                        <img src="../imagens/imagens_rafa/cbjr.png"
-                             alt="CBJR" loading="lazy">
-                        <img src="../imagens/imagens_rafa/lana.png"
-                             alt="Lana" loading="lazy">
-                        <img src="../imagens/imagens_rafa/tyler.png"
-                             alt="Tyler" loading="lazy">
-                    </div>
-                </li>
+nav li a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 24px;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
 
-                <li>
-                    <div>
-                        <h3>Meu hobbie é pintar minhas unhas</h3>
+nav li a:hover,
+nav li a:focus-visible {
+    background: var(--papel);
+    box-shadow: 3px 3px var(--rosa);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
 
-                        <p>
-                            Tenho quase 50 esmaltes na minha coleção,
-                            e pinto minhas unhas pelo menos uma vez
-                            por semana.
-                            Minhas cores favoritas de esmalte são vermelho e azul e eu AMO nail art, principalmente francesinha e filha única
-                            Queria muito me acostumar a fazer unha de gel, mas é muito caro e não tenho paciência para ficar indo toda semana no salão KK
-                        </p>
-                    </div>
+/* Apresentação */
 
-                    <div class="galeria">
-                        <img src="../imagens/imagens_rafa/nails.png"
-                             alt="Unhas" loading="lazy">
-                    </div>
-                </li>
-            </ol>
-        </section>
+header {
+    padding: 45px 0 30px;
+}
 
-        <section id="viagens">
-            <h2>Lugares que eu já fui</h2>
+.apresentacao {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 30px;
+}
 
-            <div class="galeria">
-                <a href="https://share.google/vERPOu3i4pJIRMSp4"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="../imagens/imagens_rafa/mg.png"
-                         alt="Minas Gerais" loading="lazy">
-                </a>
+.apresentacao > div {
+    min-width: 0;
+}
 
-                <a href="https://share.google/dtFwow13C2YbVKcFB"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="../imagens/imagens_rafa/bt.png"
-                         alt="Viagem" loading="lazy">
-                </a>
+.apresentacao > div > p:first-child {
+    color: var(--destaque);
+    font-weight: bold;
+}
 
-                <a href="https://share.google/qYLkrR0SDEPJYfehp"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="../imagens/imagens_rafa/jeri.png"
-                         alt="Jericoacoara" loading="lazy">
-                </a>
 
-                <a href="https://share.google/O9xFM6GEwXGRDaDbP"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="../imagens/imagens_rafa/hola.png"
-                         alt="Viagem" loading="lazy">
-                </a>
-            </div>
-        </section>
 
-        <section id="destinos">
-            <h2>Lugares que eu quero ir</h2>
+main > section {
+    padding: 30px 0;
+}
 
-            <div class="galeria">
-                <a href="https://share.google/O2YRSOBCC14l2VVHH"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="../imagens/imagens_rafa/tokyo.png"
-                         alt="Tokyo" loading="lazy">
-                </a>
+section:target > h2 {
+    border-left-color: var(--destaque);
+}
 
-                <a href="https://share.google/jBxwO9bfFZjrmnC5m"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="../imagens/imagens_rafa/ibiza.png"
-                         alt="Ibiza" loading="lazy">
-                </a>
 
-                <a href="https://share.google/gFEflXMKgvnvGt8P1"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="../imagens/imagens_rafa/italy.png"
-                         alt="Italia" loading="lazy">
-                </a>
+.curiosidades {
+    display: grid;
+    gap: 26px;
+    list-style: none;
+}
 
-                <a href="https://share.google/BwHueL8iyeKDina06"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="../imagens/imagens_rafa/hawaii.png"
-                         alt="Hawaii" loading="lazy">
-                </a>
-            </div>
-        </section>
-    </main>
+.curiosidades > li {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 28px;
+    padding: 28px;
+    background: var(--papel);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    box-shadow: 5px 5px var(--rosa-claro);
+}
 
-    <footer id="contato">
-        <div class="largura">
-            <div>
-                <p class="marca">Rafaa S2</p>
-                <small>Um pouquinho sobre mim e minhas loucuras.</small>
-            </div>
+.curiosidades > li:nth-child(even) {
+    background: #fff0ed;
+}
 
-            <a class="botao" href="#topo">Voltar ao topo ↑</a>
-        </div>
-    </footer>
-<a class="osbobocas-voltar-index" href="../index.html" aria-label="Voltar para a pÃ¡gina inicial dos Bobocas">&#8592; Voltar para OsBobocas</a>
-</body>
-</html>
+.curiosidades > li > div {
+    min-width: 0;
+}
+
+.curiosidades p {
+    max-width: 65ch;
+}
+
+
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.botao {
+    display: inline-block;
+    max-width: 100%;
+    padding: 10px 16px;
+    background: var(--rosa-claro);
+    border: 1px solid var(--rosa);
+    border-radius: 24px;
+    box-shadow: 3px 3px var(--rosa);
+    font-size: 0.95rem;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.botao:hover,
+.botao:focus-visible {
+    background: var(--rosa);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.botao:active {
+    box-shadow: none;
+    transform: translateY(1px);
+}
+
+.botao strong,
+.botao span {
+    display: block;
+}
+
+.botao span {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+}
+
+.galeria > * {
+    min-width: 0;
+}
+
+.galeria img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.galeria > :nth-child(odd) img,
+.galeria > img:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.galeria > :nth-child(even) img,
+.galeria > img:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.galeria img:hover {
+    transform: rotate(0deg);
+}
+
+.galeria > :only-child {
+    grid-column: 1 / -1;
+}
+
+.galeria > :only-child img,
+.galeria > img:only-child {
+    max-height: 350px;
+    transform: none;
+}
+
+.galeria a {
+    display: block;
+    border-radius: 10px;
+}
+
+
+section > .galeria {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    padding: 24px;
+    background: var(--rosa-claro);
+    border: 1px dashed var(--rosa);
+    border-radius: 20px;
+}
+
+
+.carrossel {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+    padding: 24px 16px;
+    overflow-x: auto;
+    background: var(--caramelo);
+    border: 2px solid #a46d3b;
+    border-radius: 18px;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    scrollbar-width: auto;
+    scrollbar-color: #704522 #e8c9a5;
+}
+
+.carrossel > img {
+    flex: 0 0 85%;
+    width: 85%;
+    min-width: 0;
+    height: 300px;
+    object-fit: contain;
+    scroll-snap-align: center;
+}
+
+
+footer {
+    margin-top: 30px;
+    padding: 15px 0;
+    background: var(--rosa-claro);
+    border-top: 2px solid var(--rosa);
+}
+
+footer small {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.9rem;
+}
+
+
+
+@media (max-width: 760px) {
+    nav .largura {
+        flex-direction: column;
+        gap: 8px;
+        padding-block: 10px;
+    }
+
+    nav li a {
+        padding: 7px 10px;
+        font-size: 0.85rem;
+    }
+
+    header {
+        padding-top: 30px;
+    }
+
+    .apresentacao,
+    .curiosidades > li {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .curiosidades > li {
+        padding: 22px;
+    }
+
+    .galeria {
+        gap: 12px;
+    }
+
+    section > .galeria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        padding: 18px;
+    }
+
+    .carrossel > img {
+        height: 260px;
+    }
+
+    footer .largura {
+        flex-wrap: wrap;
+    }
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
